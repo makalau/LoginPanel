@@ -1,0 +1,353 @@
+/* sass origem.scss:final.css --style compressed  #Método para minificar documento css. */
+@use "./components/cores.scss" as *;
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color: #0fccee;
+    --text-color:#fff;
+    --bg-color: #181818;
+    --second-bg-color: #000;
+}
+
+
+@mixin button-style($background, $color){
+    background-color: $background;
+    color: $color;
+}
+
+.btn{
+    background-color: #1997AD;
+    border: 0;
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    color: var(--text-color);
+    font-weight: 900;
+    text-shadow: 0px 0.5px 5px #000;
+    letter-spacing: 3px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px auto 0px auto;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px #000;
+
+}
+
+.active{
+    color: var(--main-color);
+    text-shadow: 1px 1px 15px var(--main-color),
+                 1px 1px 25px var(--main-color);
+
+    & i{
+        font-size: 18px;
+    }
+}
+.container{
+    padding-top: 50px;
+    padding-left: 50px;
+
+    h1, h2{
+        color: $White;
+    }
+}
+
+
+body{
+    color: var(--text-color);
+    overflow-x: hidden;
+    font-family: "Georgia", sans-serif;
+}
+
+.cabecalho{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: $Azul-Escuro;
+    position: fixed;
+    top: 0;
+    z-index: 666;
+
+    .menu{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 35px;
+
+        & .switch-buttom{
+            display: flex;
+            align-items: center;
+            justify-content: center;    
+        }
+
+        & .logoDiv{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 0.8px #fff;
+            padding: 5px 10px;
+    /* ------------------------------- TESTE HOVER
+            background-color: #000;
+            &:hover{
+                background-color: $AzulMeiaNoite;
+                color: #000;
+                text-shadow: 0px 0px 23px var(--main-color),
+                             0px 0px 30px var(--main-color);
+                border: 1px solid #999797;
+            }
+            */
+
+            i{
+                font-size: 25px;
+            }
+        }
+
+
+        & .setTheme{
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        & li{
+            list-style-type: none;
+        }
+
+        & ul{
+            display: flex;
+            gap: 20px;
+        }
+
+        & ul .navlink{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        & a{
+            position: relative;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        & a::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            margin-bottom: -5px;
+            background-color: var(--main-color);
+            transition: 0.3s ease-in-out;
+        }
+
+        & a:hover::before{
+            width: 100%;
+        }
+
+        & .logo{
+            position: relative;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+
+
+        & .logo span{
+            color: var(--main-color);
+            text-shadow: 0px 0px 23px var(--main-color),
+                         0px 0px 30px var(--main-color);
+        }
+    }
+
+}
+
+.principal{
+    height: 110vh;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+/* Configuração do formulário */
+
+.section-forms{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.section-forms .div-form{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    align-items: center;
+    gap: 30px;
+    width: 500px;
+    height: 400px;
+    box-shadow: 0px 0px 20px #181818;
+    
+
+    & .form{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    & .form input{
+        height: 35px;
+        padding: 0px 10px;
+        border: 0;
+        outline: 0;
+        border: 2px solid var(#A4A4A4);
+        border-radius: 4px;
+        font-size: 18px;
+        box-shadow: 0px 0px 0.8px #000;
+        color: #fff;
+    }
+
+    & h2{
+        text-shadow: 1px 1px 5px #000;
+    }
+
+    & p{
+        text-shadow: 1px 1px 3px #000;
+        cursor: pointer;
+    }
+}
+
+.accounts-div{
+    display: flex;
+    gap: 25px;
+
+    & .account-item{
+        width: 35px;
+        height: 35px;
+        background-color: #fff;
+        border-radius: 50%;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    & .account-item img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+#light-background{
+    background-image: url("../assets/imgs/lightmode-background.png");
+    background-position: center;
+    background-size: 100% 100%;
+
+    & .section-forms .div-form .form input{
+        color: #181818;
+        font-weight: 400;
+    }
+}
+
+#light-theme{
+    background-image: linear-gradient(#09244E 50%,#A1C7FF 100%);
+    box-shadow: 0px 4px 15px #181818;
+}
+
+
+#dark-background{
+    background-image: url("../assets/imgs/dark3.png");
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+#dark-theme{
+    background-image: linear-gradient(#000 50%,#09244E 100%);
+    box-shadow: 0px 4px 15px #999797;
+
+    & .div-form .form input{
+        background-color: #111;
+        box-shadow: 0px 0px 25px #999797;
+    }
+
+    & .div-form .form .btn{
+        background-color: #000;
+        box-shadow: 0px 0px 15px $AzulMeiaNoite,
+                    0px 0px 25px $AzulMeiaNoite;
+        font-family: Arial;
+        letter-spacing: 1px;
+    }
+
+    & .div-form .form .btn:hover{
+        background-color: $AzulMeiaNoite;
+        box-shadow: 0px 0px 15px $AzulMeiaNoite,
+                    0px 0px 25px $AzulMeiaNoite;
+        color: #fff;
+        text-shadow: 0px 0px 10px #A4A4A4;
+        border: 1px solid #A4A4A4;
+    }
+
+    & .div-form .account-item:nth-last-of-type(2){
+        background-color: #000;
+        padding: 5px 5px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 15px $AzulMeiaNoite,
+        0px 0px 25px $AzulMeiaNoite;
+    }
+
+    & .div-form .account-item:nth-last-of-type(1){
+        background-color: #000;
+        border-radius: 50%;
+        padding: 5px 5px;
+            box-shadow: 0px 0px 15px $AzulMeiaNoite,
+            0px 0px 25px $AzulMeiaNoite;
+    }
+
+    & .div-form .account-item:hover{
+        box-shadow: 0px 0px 15px $AzulMeiaNoite,
+                    0px 0px 25px $AzulMeiaNoite;
+        background-color: $AzulMeiaNoite;
+        border: 1px solid #A4A4A4;
+    }
+
+
+}
+
+.rodape{
+    width: 100%;
+    height: 50px;
+    background-color: $Azul-Escuro;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #09244E;
+    border-radius: 1px;
+    cursor: pointer;
+
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #000;
+    box-shadow: inset 0px 2px 4px var(--main-color);
+  }
